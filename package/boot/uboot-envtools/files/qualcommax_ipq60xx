@@ -25,6 +25,14 @@ yuncore,fap650)
 	[ -n "$idx" ] && \
 		ubootenv_add_uci_config "/dev/mtd$idx" "0x0" "0x10000" "0x10000"
 	;;
+jdcloud,re-ss-01|\
+jdcloud,re-cs-02|\
+jdcloud,re-cs-07|\
+link,nn6000-v1|\
+link,nn6000-v2|\
+redmi,ax5-jdcloud)
+	ubootenv_add_mmc "0:APPSBLENV" "0x0" "0x40000" "0x20000"
+	;;
 esac
 
 config_load ubootenv
